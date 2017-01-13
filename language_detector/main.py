@@ -5,7 +5,7 @@
 def detect_language(text, languages):
     """Returns the detected language of given text."""
 
-    character_list = [ c for c in text if c.isdigit() or c.isalpha() or c is ' ' ]
+    character_list = [ c for c in text if c.isalpha() or c.isdigit() or c is ' ' ]
     word_list = "".join(character_list).split()
 
     results = { lang['name']:len([ word for word in word_list
@@ -13,4 +13,3 @@ def detect_language(text, languages):
                 for lang in languages }
 
     return max(results, key=results.get)
-
